@@ -14,6 +14,7 @@ const Footer = () => {
             <li><a href="/cart">Cart</a></li>
             <li><a href="/login">Login</a></li>
             <li><a href="/seller">Seller Dashboard</a></li>
+            <li><a href="http://127.0.0.1:8000/admin/store/product/">Seller Profile Dashboard</a></li>
           </ul>
         </div>
         <div className={styles['footer-section']}>

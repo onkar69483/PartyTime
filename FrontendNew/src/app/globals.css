@@ -20,8 +20,10 @@ body {
 }
 
 .Advertising {
-  height: 200px; /* You can adjust the height as needed */
+  height: 300px; /* Set height to 100% */
   width: 95%;
+  background-image: url('/images/advertise.webp');
+  background-size: cover;
   margin: 0 auto;
   background-color: rgb(112, 214, 112);
   position: relative;
@@ -34,6 +36,7 @@ body {
   margin-bottom: 10px;
   overflow: hidden; /* Ensures the image doesn't overflow */
   font-size: 70px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 

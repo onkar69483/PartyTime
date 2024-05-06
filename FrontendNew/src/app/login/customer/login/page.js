@@ -65,13 +65,14 @@ const CustomerLogin = () => {
         body: JSON.stringify(formData)
       });
       const data = await response.json();
-
+      console.log(data);
       // Check the response for the 'refresh' key
       if ('refresh' in data) {
         // Assuming successful login, store tokens in local storage
         localStorage.setItem('accessToken', data.access);
         localStorage.setItem('refreshToken', data.refresh);
-
+        localStorage.setItem('firstName', data.user.first_name);
+        console.log(data.user.first_name);
         // Set login message
         console.log("Login successful!");
         setLoginMessage('Login successful!');

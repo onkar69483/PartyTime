@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaSearch, FaMapMarkerAlt } from 'react-icons/fa';
 import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
@@ -18,10 +18,18 @@ const Navbar = (props) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [inputFocused, setInputFocused] = useState(false);
+  const [firstName, setFirstName] = useState('');
 
   const { cart } = useCart();
   const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
   const totalPrice = cart.reduce((total, item) => total + (item.discountedPrice * item.quantity), 0);
+
+  useEffect(() => {
+    const firstNameFromLocalStorage = localStorage.getItem('firstName');
+    if (firstNameFromLocalStorage) {
+      setFirstName(firstNameFromLocalStorage);
+    }
+  }, []);
 
   const handleSearchClick = (productid) => {
     // Programmatically navigate to the product detail page
@@ -132,7 +140,7 @@ const Navbar = (props) => {
         </Link>
         <Link className={styles.Login} href="/login">
           <img src="/icons/icons8-user-profile-96.png" alt="Login" />
-          Login
+          {firstName ? firstName : 'Login'}
         </Link>
         {props.on && (
           <Link className={styles.cart} href="/cart">

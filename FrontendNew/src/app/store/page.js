@@ -219,7 +219,7 @@ export default function Store() {
 
   return (
     <div className="Store">
-      <div className="Advertising">Advertising</div>
+      <div className="Advertising"></div>
       {categories.map(category => (
         <ProductsList key={category} products={products.filter(product => product.category.name === category)} category={category} />
       ))}

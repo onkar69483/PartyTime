@@ -155,7 +155,7 @@
   align-items: center;
   gap: 10px;
   padding: 0px 10px; /* Adjust padding as needed */
-  width: 100px;
+  min-width: 100px;
   height: 40px;
   background-color: #ff9900;
   color: #fff;
